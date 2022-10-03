@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+Unity Project Y2B1/Packages/packages-lock.json
+Unity Project Y2B1/Packages/manifest.json
+Unity Project Y2B1/pxr_streamer_31256.log
