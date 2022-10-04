@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.skittles_unityv2.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Justin\\Documents\\GitHub\\Skittles-V2.0\\Skittles_Unity V2.0\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Skittles_Unity V2 [Testing]"
+        }
+      }
+    }
+  ]
+}
