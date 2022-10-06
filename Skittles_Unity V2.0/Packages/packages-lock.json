@@ -238,7 +238,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/nicol/OneDrive/Desktop/CMGT Year 2/Block 1/PICO UnityXR Integration SDK v207",
+      "version": "file:C:/Users/Justin Gert/Downloads/PICO UnityXR Integration SDK v207",
       "depth": 0,
       "source": "local",
       "dependencies": {
