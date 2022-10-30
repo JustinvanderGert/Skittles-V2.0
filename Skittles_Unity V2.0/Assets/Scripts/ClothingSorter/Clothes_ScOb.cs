@@ -8,5 +8,6 @@ public class Clothes_ScOb : ScriptableObject
     public enum ClothesType { Shirt, Jeans, Jacket};
     public ClothesType type;
 
-    public Color color;
+    public enum ClothesColor { Black, Blue, Red};
+    public ClothesColor color;
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Jeans_Blue
   m_EditorClassIdentifier: 
   type: 1
-  color: {r: 0, g: 0.08628178, b: 1, a: 0}
+  color: 1
