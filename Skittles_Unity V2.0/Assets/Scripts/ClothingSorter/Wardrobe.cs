@@ -7,6 +7,7 @@ public class Wardrobe : MonoBehaviour
 {
     public List<GameObject> hungClothes = new List<GameObject>();
     public List<GameObject> hangers = new List<GameObject>();
+    public GameObject light;
 
     public int hangerAmount = 3;
 
@@ -35,6 +36,8 @@ public class Wardrobe : MonoBehaviour
         hungClothes[hangerIndex] = heldClothes;
 
         sorted = WardrobeCheck();
+        if (sorted) light.SetActive(true);
+        else if (!sorted) light.SetActive(false);
     }
 
     public void RemoveClothesFromList(XRSocketInteractor socket)
@@ -48,6 +51,8 @@ public class Wardrobe : MonoBehaviour
         hungClothes[hangerIndex] = null;
 
         sorted = WardrobeCheck();
+        if (sorted) light.SetActive(true);
+        else if (!sorted) light.SetActive(false);
     }
 
     bool WardrobeCheck()

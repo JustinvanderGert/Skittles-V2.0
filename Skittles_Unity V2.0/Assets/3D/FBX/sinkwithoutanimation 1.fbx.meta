@@ -1,32 +1,8 @@
 fileFormatVersion: 2
-guid: 2c5f273e473c1f3449690e90b2e1f484
+guid: 7c10d6ff99446a24bafd5ce6d348eeb7
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: -975818399867965578
-    second: Plane|TabClose
-  - first:
-      74: 4006898110570472517
-    second: Plane|TabOpen
-  - first:
-      74: 6914574326087852099
-    second: Cylinder|TabClose
-  - first:
-      74: -471381176610032652
-    second: Cylinder|TabOpen
-  - first:
-      74: -5338786736393285145
-    second: Cylinder.001|TabClose
-  - first:
-      74: -798189500733012474
-    second: Cylinder.001|TabOpen
-  - first:
-      74: -2509869270273162395
-    second: Cylinder.002|TabClose
-  - first:
-      74: 2380831852169581623
-    second: Cylinder.002|TabOpen
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
