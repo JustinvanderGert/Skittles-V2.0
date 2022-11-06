@@ -47,9 +47,9 @@ public class Lights : MonoBehaviour
                 lightActive = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A)(0))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            counter++
+            counter++;
         }
         void OnTriggerEnter(Collider other)
         {
