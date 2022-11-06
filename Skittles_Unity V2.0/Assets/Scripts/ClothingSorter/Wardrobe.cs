@@ -7,9 +7,9 @@ public class Wardrobe : MonoBehaviour
 {
     public List<GameObject> hungClothes = new List<GameObject>();
     public List<GameObject> hangers = new List<GameObject>();
-    public GameObject light;
+    public GameObject completionLight;
 
-    public int hangerAmount = 3;
+    int hangerAmount = 3;
 
     //Set to true if you want to check for color sorting (will disable type sorting)
     public bool sortByColor = false;
@@ -20,6 +20,10 @@ public class Wardrobe : MonoBehaviour
 
     void Start()
     {
+        completionLight.GetComponent<Light>().color = Color.red;
+
+        hangerAmount = hangers.Count;
+
         for (int i = 0; i < hangerAmount; i++)
         {
             hungClothes.Add(null);
@@ -36,8 +40,18 @@ public class Wardrobe : MonoBehaviour
         hungClothes[hangerIndex] = heldClothes;
 
         sorted = WardrobeCheck();
-        if (sorted) light.SetActive(true);
-        else if (!sorted) light.SetActive(false);
+        if (sorted && !hungClothes.Contains(null))
+        {
+            completionLight.GetComponent<Light>().color = Color.green;
+        }
+        else if(sorted && hungClothes.Contains(null))
+        {
+            completionLight.GetComponent<Light>().color = Color.yellow;
+        }
+        else if (!sorted)
+        {
+            completionLight.GetComponent<Light>().color = Color.red;
+        }
     }
 
     public void RemoveClothesFromList(XRSocketInteractor socket)
@@ -51,8 +65,14 @@ public class Wardrobe : MonoBehaviour
         hungClothes[hangerIndex] = null;
 
         sorted = WardrobeCheck();
-        if (sorted) light.SetActive(true);
-        else if (!sorted) light.SetActive(false);
+        if (sorted)
+        {
+            completionLight.GetComponent<Light>().color = Color.yellow;
+        }
+        else if (!sorted)
+        {
+            completionLight.GetComponent<Light>().color = Color.red;
+        }
     }
 
     bool WardrobeCheck()
@@ -76,7 +96,7 @@ public class Wardrobe : MonoBehaviour
                     {
                         if (hungClothes[i - 1] != null || (hungClothes[i - 1] != null && hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type != hungClothes[i - 1].GetComponent<Clothes>().Clothes_ScOb.type))
                         {
-                            Debug.Log("Type Checks =  " + "Jeans: " + checkedJeans + ", Jacket: " + checkedJacket + ", Shirts: " + checkedShirts + ", MyType: " + hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type);
+                            //Debug.Log("Type Checks =  " + "Jeans: " + checkedJeans + ", Jacket: " + checkedJacket + ", Shirts: " + checkedShirts + ", MyType: " + hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type);
 
                             //Set checked item type
                             if (hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type == Clothes_ScOb.ClothesType.Jeans && !checkedJeans)
@@ -91,7 +111,7 @@ public class Wardrobe : MonoBehaviour
                             //Next item type has already been encountered
                             else
                             {
-                                Debug.Log("Return false");
+                                //Debug.Log("Return false");
                                 return false;
                             }
                         }
@@ -102,7 +122,7 @@ public class Wardrobe : MonoBehaviour
                     //Is the same clothing type hanging next to it
                     if (hungClothes[i + 1] == null || (hungClothes[i + 1] != null && hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type != hungClothes[i + 1].GetComponent<Clothes>().Clothes_ScOb.type))
                     {
-                        Debug.Log("Type Checks =  " + "Jeans: " + checkedJeans + ", Jacket: " + checkedJacket + ", Shirts: " + checkedShirts + ", MyType: " + hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type);
+                        //Debug.Log("Type Checks =  " + "Jeans: " + checkedJeans + ", Jacket: " + checkedJacket + ", Shirts: " + checkedShirts + ", MyType: " + hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type);
 
                         //Set checked item type
                         if (hungClothes[i].GetComponent<Clothes>().Clothes_ScOb.type == Clothes_ScOb.ClothesType.Jeans && !checkedJeans)
@@ -117,7 +137,7 @@ public class Wardrobe : MonoBehaviour
                         //Next item type has already been encountered
                         else
                         {
-                            Debug.Log("Return false");
+                            //Debug.Log("Return false");
                             return false;
                         }
                     }
@@ -157,7 +177,7 @@ public class Wardrobe : MonoBehaviour
                             //Next item color has already been encountered
                             else
                             {
-                                Debug.Log("Return false");
+                                //Debug.Log("Return false");
                                 return false;
                             }
                         }
@@ -181,7 +201,7 @@ public class Wardrobe : MonoBehaviour
                         //Next item color has already been encountered
                         else
                         {
-                            Debug.Log("Return false");
+                            //Debug.Log("Return false");
                             return false;
                         }
                     }
