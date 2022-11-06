@@ -9,22 +9,19 @@ public class ItemLocation : MonoBehaviour
 {
     public GameObject correctItem;
     public GameObject heldItem;
-    public GameObject light;
 
-    bool hasCorrectItem;
+    public bool hasCorrectItem;
 
     public void CheckItem()
     {
         if (heldItem == correctItem)
         {
             hasCorrectItem = true;
-            light.SetActive(true);
         }
 
         else
         {
             hasCorrectItem = false;
-            light.SetActive(false);
         }
     }
 }
