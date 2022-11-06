@@ -9,6 +9,21 @@ public class Lights : MonoBehaviour
     private bool lightActive = false;
     private bool interact;
 
+    int counter = 0;
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(40, 20, 200, 50), "COUNTER: " + counter);
+        {
+
+            if (counter >= 6)
+            {
+                Application.LoadLevel("win_scene"); // this has to be changed to the marking of the task
+            }
+
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +34,7 @@ public class Lights : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (interact && Input.GetKeyDown(KeyCode.F))
+        if (interact && Input.GetKeyDown(KeyCode.A))
         {
             if (lightActive == false)
             {
@@ -31,6 +46,10 @@ public class Lights : MonoBehaviour
                 lightLight.gameObject.SetActive(false);
                 lightActive = false;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.A)(0))
+        {
+            counter++
         }
         void OnTriggerEnter(Collider other)
         {
